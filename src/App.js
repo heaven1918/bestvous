@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React,{Component,Fragment} from 'react';
+import {HashRouter,Link,Route} from 'react-router-dom'
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+import User from './pages/user/user'
+import Admins from './pages/administrator/adminis'
+class App extends Component{
+  render(){
+    return(
+      <Fragment>
+        <HashRouter>
+          <Route path='/login' component={Login}></Route>
+          <Route path='/admin' render={()=>{
+            return( 
+              <Admin>
+                <Route path='/admin/user' component={User}></Route> 
+                <Route path='/admin/administrator' component={Admins}></Route>
+              </Admin>
+            )
+          }}></Route>
+        </HashRouter>
+      </Fragment>
+    )
+  }
 }
 
 export default App;
