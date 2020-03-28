@@ -4,9 +4,7 @@ import { HomeOutlined, SettingFilled, UserOutlined,RadarChartOutlined } from '@a
 import menuList from './menulist'
 import {withRouter} from 'react-router-dom'
 const { SubMenu } = Menu;
-
 function handleClick(e) {
-  // console.log('click', e);
   let {path} = e.item.props 
   this.props.history.replace(path)
 }
@@ -55,13 +53,11 @@ class CustomNav extends Component {
   }
   state = {  }
   render() { 
-    // console.log(menuList)
     return ( 
-      <Menu onClick={handleClick.bind(this)} style={{ width: 200 }} mode="vertical" theme='dark'>
+      <Menu onClick={handleClick.bind(this)} style={{ width: 200}} mode="inline" theme='dark'>
       {this.renderItem(menuList)}
       </Menu>
      )
   }
 }
- 
 export default withRouter(CustomNav);

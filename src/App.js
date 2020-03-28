@@ -4,6 +4,7 @@ import Login from './pages/login/login'
 import Admin from './pages/admin/admin'
 import User from './pages/user/user'
 import Admins from './pages/administrator/adminis'
+import Bdata from './pages/admin/bdata'
 class App extends Component{
   render(){
     return(
@@ -13,7 +14,7 @@ class App extends Component{
           <Route path='/admin' render={()=>{
             return( 
               <Admin>
-                <Route path='/admin/user' component={User}></Route> 
+                <Route path='/admin/bdata' component={Bdata}></Route> 
                 <Route path='/admin/administrator' component={Admins}></Route>
               </Admin>
             )

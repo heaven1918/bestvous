@@ -3,133 +3,90 @@ export default[
     key:'1',
     title:"首页",
     icon:'home',
-    path:'/admin/home'
+    path:'/admin',
+    children:[
+      {
+        key:'1-1',
+        title:"地府大数据",
+        path:'/admin/bdata'
+       }
+      ]
   },
   {
    key:'2',
-   title:'用户管理',
-   icon:'user',
-   path:'/admin/user',
+   title:'生死簿管理',
+   icon:'book',
+   path:'/admin/book',
    children:[
      {
        key:'2-1',
-       title:"用户添加",
-       path:'/admin/useradd'
+       title:"生死簿",
+       path:'/admin/bookCheck'
       },
      {
       key:'2-2',
-      title:"用户列表",
-      path:'/admin/userlist'
+      title:"批量操作",
+      path:'/admin/books'
     }
    ]
   },
   {
     key:'3',
-    title:"商品管理",
+    title:"勾魂管理",
     icon:'goods',
-    path:'/admin/goods',
+    path:'/admin/gh',
     children:[
       {
         key:'3-1',
-        title:'商品信息',
-        path:'/admin/goodsinfo'
+        title:'六道轮回',
+        path:'/admin/lunHui'
       },
       {
         key:'3-2',
-        title:'商品类别',
-        path:'/admin/goodsKind'
+        title:'十八层地狱',
+        path:'/admin/18hells'
       }
     ]
   },
   {
     key:'4',
-    title:"数据统计",
+    title:"审判管理",
     icon:'echarts',
-    path:'/admin/echarts',
+    path:'/admin/judge',
     children:[
       {
         key:'4-1',
-        title:'饼状图',
-        path:'/admin/echarts/pie'
+        title:'设备管理',
+        path:'/admin/judgeEquipment'
       },
       {
         key:'4-2',
-        title:'折线图',
-        path:'/admin/echarts/line'
+        title:'审判记录',
+        path:'/admin/judgeRecord'
       },
       {
         key:'4-3',
-        title:'柱状图',
-        path:'/admin/echarts/bar'
-      },
+        title:'沉冤昭雪',
+        path:'/admin/judgeReload'
+      }
     ]
   },
   {
-    key:'8',
-    title:"管理员",
-    icon:'administrator',
-    path:'/admin/administrator'
+    key:'5',
+    title:"冥币管理",
+    icon:'money',
+    path:'/admin/money'
   },
   {
-    key:'9',
-    title:"设置",
+    key:'6',
+    title:"日志管理",
+    icon:'log',
+    path:'/admin/log'
+  },
+  {
+    key:'7',
+    title:"人事管理",
     icon:'set',
-    path:'/admin/set'
+    path:'/admin/administrator'
   },
 ]
-// 递归测试数据
-// export default [
-//   {
-//     key:'1',
-//     title:"首页",
-//     path:'/admin/home'
-//   },
-//   {
-//     key:'2',
-//     title:'管理员',
-//     children:[
-//       {
-//         key:'2-1',
-//         title:'管理员添加',
-//         path:'/admin/admin/add'
-//       },
-//       {
-//         key:'2-2',
-//         title:'管理员修改',
-//         path:'/admin/admin/update',
-//         children:[
-//           {
-//             key:'2-2-1',
-//             title:'管理员修改1',
-//             path:'/admin/admin/update1'
-//           },
-//           {
-//             key:'2-2-2',
-//             title:'管理员修改2',
-//             path:'/admin/admin/update1'
-//           },
-//           {
-//             key:'2-2-3',
-//             title:'管理员修改3',
-//             path:'/admin/admin/update1',
-//             children:[
-//               {
-//                 key:'2-2-3-1',
-//                 title:'管理员修改3-1',
-//               },
-//               {
-//                 key:'2-2-3-2',
-//                 title:'管理员修改3-2',
-//               }
-//             ]
-//           }
-//         ]
-//       }
-//     ]
-//   },
-//   {
-//     key:'9',
-//     title:"设置",
-//     path:'/admin/set'
-//   }
-// ]

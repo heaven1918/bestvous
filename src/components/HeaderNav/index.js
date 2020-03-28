@@ -33,16 +33,16 @@ class HeaderNav extends Component {
   render() { 
     return ( 
       <div className={style.box}>
-        这里是头部导航
+        <h2>地府管理系统</h2>
         <Dropdown overlay={createMenu(userdata)}>
-          <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-            Hover me 
-          </a>
+          <span className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+            个人中心
+          </span>
         </Dropdown>
         <Dropdown overlay={createMenu(langData)}>
-          <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+          <span className="ant-dropdown-link" onClick={e => e.preventDefault()}>
             语言 
-          </a>
+          </span>
         </Dropdown>
       </div>
      );

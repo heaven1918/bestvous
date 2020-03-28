@@ -22,6 +22,11 @@ class Admins extends Component {
         key: 'userName',
       },
       {
+        title: '权限',
+        dataIndex: 'right',
+        key: 'right', 
+      },
+      {
         title:'操作',
         key:'action',
         // 定义渲染的列
