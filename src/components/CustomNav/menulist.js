@@ -34,7 +34,7 @@ export default[
     key:'3',
     title:"勾魂管理",
     icon:'goods',
-    path:'/admin/gh',
+    path:'/admin/soulManage',
     children:[
       {
         key:'3-1',
@@ -44,7 +44,7 @@ export default[
       {
         key:'3-2',
         title:'十八层地狱',
-        path:'/admin/18hells'
+        path:'/admin/hell'
       }
     ]
   },

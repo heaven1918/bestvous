@@ -1,30 +1,43 @@
-import React, { Component } from 'react';
+import React,{Component} from 'react'
 import {Card ,Table,Button,Modal,notification,Spin,Popconfirm,message} from 'antd'
 import {PlusOutlined} from '@ant-design/icons'
-import style from './index.module.less'
-import adminapi from '@api/adminapi.js' 
-// 声明表头的数据格式
-// let  columns = ;
-class Admins extends Component {
+import style from './bookcheck.module.less'
+import booksapi from '@api/booksapi'
+class BookCheck extends Component{
   state = { 
     dataSource:[],
     visible:false,
     spinning:false,
     columns:[
       {
-        title: 'id',   //显示
+        title: 'ID',   //显示
         dataIndex: '_id',//数据索引字段
         key: '_id', //key值
       },
       {
-        title: '账号',
-        dataIndex: 'userName',
-        key: 'userName',
+        title: '姓名',
+        dataIndex: 'name',
+        key: 'name',
       },
       {
-        title: '权限',
-        dataIndex: 'identify',
-        key: 'identify', 
+        title: '年龄',
+        dataIndex: 'age',
+        key: 'age',
+      },
+      {
+        title: '寿命',
+        dataIndex: 'deadage',
+        key: 'deadage',
+      },
+      {
+        title: '种族',
+        dataIndex: 'nation',
+        key: 'nation',
+      },
+      {
+        title: '善恶',
+        dataIndex: 'quality',
+        key: 'quality',
       },
       {
         title:'操作',
@@ -35,7 +48,7 @@ class Admins extends Component {
           return(
             <div>
                <Popconfirm
-                title="你确定要删除这个用户吗?"
+                title="你确定要删除这个人吗?"
                 onConfirm={()=>{
                   this.del(record._id)
                 }}
@@ -50,73 +63,60 @@ class Admins extends Component {
         },
       }
     ]
-   }
-   del=async (_id)=>{
-     // 获取id 掉接口 刷新界面
-     console.log('删除',_id)
-     let result =await adminapi.del(_id)
-     // 根据结果进行
-     if(result.code !==0){ return false }
-     this.refreshList() 
-   }
-   handleOk=async ()=>{
-    // 先获取输入内
-    // 做添加接口
-    // 关闭模态框
-    // 刷新界面
-    let userName = this.refs.us.value
-    let passWord = this.refs.ps.value
-    let identify = this.refs.id.value
-    let result = await adminapi.add({userName,passWord,identify})
-    if (result.code!==0){ return notification.error({description:'管理员添加失败，请详细检查传输',message:'错误',duration:1.5})}
-    notification.success({description:'管理员添ok，模态框即将关闭',message:'成功',duration:1.5})
+  }
+  del=async (_id)=>{
+    // 获取id 掉接口 刷新界面
+    console.log('删除',_id)
+    let result =await booksapi.del(_id)
+    // 根据结果进行
+    if(result.code !==0){ return false }
+    this.refreshList() 
+  }
+  handleOk = async ()=>{
+    notification.success({description:'生死簿ok，模态框即将关闭',message:'成功',duration:0.3})
     this.setState({visible:false})
-    this.refreshList()
-   }
-   handleCancel=()=>{
+  }
+  handleCancel=()=>{
     this.setState({visible:false})
    }
-   //刷新列表数据
    refreshList=async ()=>{
     this.setState({spinning:true})
-    let result = await adminapi.list()
-    console.log(result)
-    this.setState({dataSource:result.adminList,spinning:false})
-   }  
-  componentDidMount(){
+    let result = await booksapi.list()
+    console.log(result,123)
+    this.setState({dataSource:result.list,spinning:false})
+   } 
+   componentDidMount(){
     // 请求数据渲染界面
    this.refreshList()
   }
-  render() { 
+  render(){
     let {dataSource,visible,spinning,columns} =this.state
     return (
       <div className={style.admins}>
-         <Card title='管理员列表'>
+         <Card title='生死簿'>
             {/* dataSource 表格内容数据
                 columns    表头数据
                 rowKey     设置为唯一索引字段
             */}
             <Button type="primary"onClick={()=>{
               this.setState({visible:true})
-            }}>{<PlusOutlined/>}添加</Button>
+            }}>{<PlusOutlined/>}添加人员</Button>
             <Spin spinning={spinning}>
               <Table dataSource={dataSource} columns={columns} rowKey='_id'></Table>
             </Spin>
          </Card>
          {/* 添加的模态框 */}
          <Modal
-          title="管理员添加"
+          title="添加人员"
           visible={visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
           userName:<input type="text" ref='us'/><br/>
           passWord:<input type="text" ref='ps'/><br/>
-          identify:<input type="text" ref='id'/><br/>
         </Modal>
       </div>
      );
   }
 }
- 
-export default Admins;
+export default BookCheck

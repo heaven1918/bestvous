@@ -159,4 +159,3 @@ class Bdata extends Component{
   }
 }
 export default Bdata
-// http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u245.png?token=c41f4818e1bc0b675374a5970e866292cd7aac78227adacd5fea87572823f24d
