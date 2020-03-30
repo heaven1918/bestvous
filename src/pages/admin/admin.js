@@ -19,7 +19,7 @@ class Admin extends Component {
       <Header style={ {background:'purple'} }>
       <HeaderNav></HeaderNav>
       </Header>
-      <Content >
+      <Content>
         {this.props.children}
       </Content>
       <Footer >Ant Design ©2018 Created by Ant UED</Footer>
