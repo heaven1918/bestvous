@@ -24,7 +24,7 @@ for (let i = 0; i < 46; i++) {
     address: `London, Park Lane no. ${i}`,
   });
 }
-class Books extends Component {
+class Log extends Component {
   state = {
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
@@ -57,7 +57,7 @@ class Books extends Component {
       <div>
         <div style={{ marginBottom: 16 }}>
           <Button type="primary" onClick={this.start} disabled={!hasSelected} loading={loading}>
-            走你
+            Reload
           </Button>
           <span style={{ marginLeft: 8 }}>
             {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
@@ -68,4 +68,4 @@ class Books extends Component {
     );
   }
 }
-export default Books
+export default Log

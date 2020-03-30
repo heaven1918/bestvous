@@ -14,7 +14,6 @@ class Admin extends Component {
       <div className="logo" />
       <CustomNav></CustomNav>
     </Sider>
-   
     <Layout >
       <Header style={ {background:'purple'} }>
       <HeaderNav></HeaderNav>

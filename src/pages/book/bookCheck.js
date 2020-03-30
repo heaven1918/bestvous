@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {Card ,Table,Button,Modal,notification,Spin,Popconfirm,message} from 'antd'
 import {PlusOutlined} from '@ant-design/icons'
 import style from './bookcheck.module.less'
+import booksapi from '@api/booksapi'
 class BookCheck extends Component{
   state = { 
     dataSource:[],
@@ -63,6 +64,14 @@ class BookCheck extends Component{
       }
     ]
   }
+  del=async (_id)=>{
+    // 获取id 掉接口 刷新界面
+    console.log('删除',_id)
+    let result =await booksapi.del(_id)
+    // 根据结果进行
+    if(result.code !==0){ return false }
+    this.refreshList() 
+  }
   handleOk = async ()=>{
     notification.success({description:'生死簿ok，模态框即将关闭',message:'成功',duration:0.3})
     this.setState({visible:false})
@@ -70,6 +79,16 @@ class BookCheck extends Component{
   handleCancel=()=>{
     this.setState({visible:false})
    }
+   refreshList=async ()=>{
+    this.setState({spinning:true})
+    let result = await booksapi.list()
+    console.log(result,123)
+    this.setState({dataSource:result.list,spinning:false})
+   } 
+   componentDidMount(){
+    // 请求数据渲染界面
+   this.refreshList()
+  }
   render(){
     let {dataSource,visible,spinning,columns} =this.state
     return (

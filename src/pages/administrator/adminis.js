@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Card ,Table,Button,Modal,notification,Spin,Popconfirm,message} from 'antd'
 import {PlusOutlined} from '@ant-design/icons'
 import style from './index.module.less'
-import adminapi from '../../api/adminapi.js' 
+import adminapi from '@api/adminapi.js' 
 // 声明表头的数据格式
 // let  columns = ;
 class Admins extends Component {
@@ -23,8 +23,8 @@ class Admins extends Component {
       },
       {
         title: '权限',
-        dataIndex: 'right',
-        key: 'right', 
+        dataIndex: 'identify',
+        key: 'identify', 
       },
       {
         title:'操作',
@@ -66,7 +66,8 @@ class Admins extends Component {
     // 刷新界面
     let userName = this.refs.us.value
     let passWord = this.refs.ps.value
-    let result = await adminapi.add({userName,passWord})
+    let identify = this.refs.id.value
+    let result = await adminapi.add({userName,passWord,identify})
     if (result.code!==0){ return notification.error({description:'管理员添加失败，请详细检查传输',message:'错误',duration:1.5})}
     notification.success({description:'管理员添ok，模态框即将关闭',message:'成功',duration:1.5})
     this.setState({visible:false})
@@ -111,6 +112,7 @@ class Admins extends Component {
         >
           userName:<input type="text" ref='us'/><br/>
           passWord:<input type="text" ref='ps'/><br/>
+          identify:<input type="text" ref='id'/><br/>
         </Modal>
       </div>
      );
