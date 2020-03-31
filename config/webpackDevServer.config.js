@@ -103,7 +103,7 @@ module.exports = function(proxy, allowedHost) {
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy:{
       '/mall':{
-        target:'http://localhost:3000/',
+        target:'http://47.115.185.70:3000/',
         changeOrigin:true,
         pathRewrite:{
           "^/mall":''
