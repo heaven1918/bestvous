@@ -24,6 +24,7 @@
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "echarts": "^4.7.0",
+    "echarts-for-react": "^2.0.15-beta.1",
     "echarts-react": "0.0.1-beta",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",

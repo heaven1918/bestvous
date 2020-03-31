@@ -1,9 +1,15 @@
-.head{
-  border-width: 0px;
+.content{
+  overflow: scroll;
   position: absolute;
   left: 200px;
   right: 0;
   top: 64px;
+  bottom: 0;
+}
+.head{
+  border-width: 0px;
+  position: absolute;
+  width: 100%;
   height: 72px;
   background: black;
   line-height: 72px;
@@ -22,5 +28,173 @@
   .headtext{
     font-family: '微軟正黑體 Bold', '微軟正黑體 Regular', '微軟正黑體';
     font-weight: 700;
+  }
+}
+.center{
+  background: url(http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/%E5%9C%B0%E5%BA%9C%E5%A4%A7%E6%95%B0%E6%8D%AE/u210.png?token=bb77b1c99d7821000e7bbd6750e8fd21cd20d53774387dd19b3331ae72689c20);
+  position: absolute;
+  top:72px;
+  background-size: 100%;
+  width: 100%;
+  .left{
+    width: 300px;
+    // height: 823px;
+    margin: 15px;
+    font-size: 14px;
+    h6{
+      color: white;
+      font-size: 14px;
+    }
+    h1{
+      color: #00ffcc;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .top{
+      width: 211px;
+      height: 92px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px 0 0 10px;
+      h6{
+        color: #00ffcc;
+      }
+    }
+    .middle{
+      width: 211px;
+      height: 500px;
+      margin: 15px 0 30px 0;
+      background: rgba(0, 0, 0, 0.3);
+      border: 0;
+      h6{
+        color: #00ffcc;
+        height: 50px;
+        margin-top: 10px;
+      }
+    }
+    .foot{
+      height: 190px;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      text-align: center;
+      padding-top: 20px;
+      h5{
+        font-size: 20px;
+      }
+      p{margin-bottom: 20px;}
+      .male{
+        float: left;
+        width: 50%;
+        height: 100px;
+        border-right: 1px solid #cccccc;
+        h5{
+          color:#00ffcc;
+          margin-top: 20px;
+        }
+      }
+      .female{
+        width: 50%;
+        float: left;
+        h5{
+          color: #ff9900;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .right{
+    width: 375px;
+    // height: 800px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom:0;
+    color: white;
+    margin-top: 10px;
+    .desc{
+      width: 41px;
+      height: 264px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      position: relative;
+      float: left;
+      span{
+        display: inline-block;
+        transform: rotate(90deg);
+        transform-origin: 5% 50%;
+        width: 200px;
+        margin-top: 10px;
+      }
+    }
+    .top{
+      height: 264px;
+      width: 375px;
+      .stat{
+        width: 324px;
+        height: 264px;
+        background: rgba(0, 0, 0, 0.3);
+        float: left;
+        margin-left: 10px;
+        padding: 10px;
+        p{
+          font-size: 12px;
+        }
+        h6{
+          padding-left: 5px;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          background: rgba(255, 255, 255, 0.1);
+          margin-bottom: 15px;
+        }
+        h1{
+          color: #00ffcc;
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          margin-bottom: 15px;
+          b{
+            font-size: 20px;
+          }
+        }
+        h5{
+          display: flex;
+          justify-content: space-between;
+          color: white;
+          font-size: 14px;
+          color: #00ffcc;
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .middle{
+      width: 375px;
+      height: 264px;
+      margin: 15px 0;
+      .stat{
+        width: 324px;
+        height: 264px;
+        background: rgba(0, 0, 0, 0.3);
+        margin-left: 60px;
+      }
+    }
+    .bottom{
+      width: 375px;
+      height: 264px;
+      .stat{
+        width: 324px;
+        height: 264px;
+        background: rgba(0, 0, 0, 0.3);
+        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        span{
+          display: flex;
+          justify-content: space-around;
+          color: white;
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
