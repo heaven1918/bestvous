@@ -15,6 +15,7 @@ import Hell from './pages/soulManage/hell'
 import HellAdd from './pages/soulManage/hellAdd'
 import HellUpdate from './pages/soulManage/hellUpdate'
 import Equipment from './pages/judge/judgeEquipment'
+import EquipAdd from './pages/judge/equipAdd'
 import Money from './pages/money/money'
 import Log from './pages/log/log'
 class App extends Component{
@@ -37,6 +38,7 @@ class App extends Component{
                 <Route path='/admin/hellAdd' component={HellAdd}></Route>
                 <Route path='/admin/hellUpdate/:id' component={HellUpdate}></Route>
                 <Route path='/admin/judgeEquipment' component={Equipment}></Route>
+                <Route path='/admin/equipAdd' component={EquipAdd}></Route>
                 <Route path='/admin/money' component={Money}></Route>
                 <Route path='/admin/log' component={Log}></Route>
               </Admin>

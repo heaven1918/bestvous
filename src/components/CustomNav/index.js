@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
-import { HomeOutlined, SettingFilled, UserOutlined,RadarChartOutlined } from '@ant-design/icons';
+import { HomeTwoTone, SettingTwoTone,BookTwoTone, UserOutlined,WalletTwoTone,
+  InteractionTwoTone,InsuranceTwoTone,PoundCircleTwoTone,SmileTwoTone } from '@ant-design/icons';
 import menuList from './menulist'
 import {withRouter} from 'react-router-dom'
 const { SubMenu } = Menu;
@@ -12,17 +13,23 @@ class CustomNav extends Component {
   renderIcon(icon){
     switch (icon) {
       case 'home':
-        return <HomeOutlined/>
-        break;
-      case 'set':
-        return <SettingFilled/>
-        break;
+        return <HomeTwoTone/>
+      case 'book':
+        return <BookTwoTone/>
       case 'user':
         return <UserOutlined/>
-        break;
+      case 'set':
+      return <SettingTwoTone/>
+      case 'soul':
+      return <InteractionTwoTone/>
+      case 'judge':
+      return <InsuranceTwoTone/>
+      case 'money':
+      return <PoundCircleTwoTone/>
+      case 'log':
+      return <WalletTwoTone/>
       default:
-        return <RadarChartOutlined />
-        break;
+        return <SmileTwoTone/>
     }
   }
   renderItem(data){

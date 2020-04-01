@@ -1,4 +1,4 @@
-import React,{Component,Fragmet} from 'react'
+import React,{Component} from 'react'
 import { Table, Button } from 'antd';
 const columns = [
   {

@@ -23,7 +23,7 @@ class HellAdd extends Component {
     let {name,floor,deadway,nation,quality} = this.state
     return ( 
       <div className={style.box}>
-         <Card title='商品添加'>
+         <Card title='商品添加' style={style.modal}>
             姓名: <input type='text' value={name} onChange={(e)=>{
               this.setState({name:e.target.value})
             }}/><br/>

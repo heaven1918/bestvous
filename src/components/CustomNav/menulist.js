@@ -33,7 +33,7 @@ export default[
   {
     key:'3',
     title:"勾魂管理",
-    icon:'goods',
+    icon:'soul',
     path:'/admin/soulManage',
     children:[
       {
@@ -51,7 +51,7 @@ export default[
   {
     key:'4',
     title:"审判管理",
-    icon:'echarts',
+    icon:'judge',
     path:'/admin/judge',
     children:[
       {
@@ -86,7 +86,7 @@ export default[
   {
     key:'7',
     title:"人事管理",
-    icon:'set',
+    icon:'admin',
     path:'/admin/administrator'
   },
 ]

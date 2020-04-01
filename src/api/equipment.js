@@ -18,6 +18,7 @@ class Equipmnts {
   }
   update(_id,payload){
     let url =`/mall/equipments/${_id}`
+    console.log('接口测试',_id,payload)
     return axios.put(url,payload)
   }
 }

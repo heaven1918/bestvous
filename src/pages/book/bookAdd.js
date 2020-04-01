@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from  './index.module.less'
 import booksApi from '@api/booksapi'
-import {Card, message} from 'antd';
+import {Card, message,Button} from 'antd';
 class BookAdd extends Component {
   state = {
     "name":"憨憨一号",
@@ -23,7 +23,7 @@ class BookAdd extends Component {
     let {name,age,deadage,nation,quality} = this.state
     return ( 
       <div className={style.box}>
-         <Card title='生死簿添加'>
+         <Card title='生死簿添加' className={style.modal}>
             姓名: <input type='text' value={name} onChange={(e)=>{
               this.setState({name:e.target.value})
             }}/><br/>
@@ -39,8 +39,8 @@ class BookAdd extends Component {
             善恶: <input type='text' value={quality} onChange={(e)=>{
               this.setState({quality:e.target.value})
             }}/><br/>
-            <button onClick={this.submit}>添加</button>
-            <button onClick={()=>{this.props.history.replace('/admin/bookCheck')}}>返回</button>
+            <Button onClick={this.submit}>添加</Button>
+            <Button onClick={()=>{this.props.history.replace('/admin/bookCheck')}}>返回</Button>
          </Card>
       </div>
      );

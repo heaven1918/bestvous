@@ -1,7 +1,7 @@
 import React,{Component,Fragment} from 'react'
-import {Card ,Table,Button,notification,Spin,Popconfirm,message,Pagination} from 'antd'
+import {Table,Button,Popconfirm,message} from 'antd'
 import booksapi from '@api/booksapi'
-import style from './lunhui.module.less'
+// import style from './lunhui.module.less'
 class LunHui extends Component{
   state = {
     dataSource:[],
@@ -63,7 +63,7 @@ class LunHui extends Component{
                   message.error('孟婆不在');
                 }}
               >
-                <Button type='danger' size='big'>轮回转世</Button>
+                <Button type='danger' size='large'>轮回转世</Button>
               </Popconfirm>
     
          <Table pagination={false} dataSource={dataSource} columns={columns} rowKey='_id'></Table>
