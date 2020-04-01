@@ -13,6 +13,7 @@ import Hell from './pages/soulManage/hell'
 import Equipment from './pages/judge/judgeEquipment'
 import Money from './pages/money/money'
 import Log from './pages/log/log'
+import TokenModel from './components/TokenModel';
 class App extends Component{
   render(){
     return(
@@ -34,6 +35,7 @@ class App extends Component{
               </Admin>
             )
           }}></Route>
+          <TokenModel></TokenModel>
         </HashRouter>
       </Fragment>
     )

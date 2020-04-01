@@ -69,7 +69,7 @@ class BookCheck extends Component{
     console.log('删除',_id)
     let result =await booksapi.del(_id)
     // 根据结果进行
-    if(result.code !==0){ return false }
+    if(result.code !==0){ return message.error(result.msg) }
     this.refreshList() 
   }
   handleOk = async ()=>{

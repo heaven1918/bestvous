@@ -14,6 +14,8 @@ class Login extends Component {
         if(res.code == 404){
           message.error('用户名密码错误')
         }else{
+          //登录成功获取token保存到localstorage
+          localStorage.setItem('token',res.token)
           message.success('登录成功，0.5s后跳转首页',0.2,()=>{
             this.props.history.replace('/admin')
           })

@@ -32,7 +32,7 @@ class Bdata extends Component{
       <div className={style.content}>
         <div className={style.head}>
         <span className={style.headicon}>
-        <img src="http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u245.png?token=eb07fa52e718e3adb3ad434b0bf0522a0f0303bd58bc85575b26846cfe40cf88" alt=""/></span>
+        <img src="../../../public/u245.png" alt=""/></span>
         <span className={style.headtext}>地府大数据可视化平台</span>
         </div>
         <div className={style.center}>
@@ -95,7 +95,7 @@ class Bdata extends Component{
           <div className={style.right}>
             <div className={style.top}>
               <div className={style.desc}>
-                <img src="http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u299.png?token=51fd883f66cf547a7a0aea01554b0c9f23f5a39d6c64b852e1c9a7257ac97e66"/>
+                <img src="../../../public/u299.png"/>
                 <span>地府工作人员业绩统计</span>
               </div>
               <div className={style.stat}>
@@ -128,7 +128,7 @@ class Bdata extends Component{
             </div>
             <div className={style.middle}>
               <div className={style.desc}>
-                <img src="http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u299.png?token=51fd883f66cf547a7a0aea01554b0c9f23f5a39d6c64b852e1c9a7257ac97e66"/>
+                <img src="../../../public/u299.png"/>
                 <span>冥币汇率变化</span>
               </div>
               <div className={style.stat}>
