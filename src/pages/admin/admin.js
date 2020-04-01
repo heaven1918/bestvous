@@ -15,7 +15,7 @@ class Admin extends Component {
       <CustomNav></CustomNav>
     </Sider>
     <Layout >
-      <Header style={ {background:'purple'} }>
+      <Header>
       <HeaderNav></HeaderNav>
       </Header>
       <Content className={style.bBox}>
