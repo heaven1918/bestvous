@@ -1,12 +1,14 @@
 import React,{Component} from 'react'
-import {Card ,Table,Button,Modal,notification,Spin,Popconfirm,message} from 'antd'
+import {Card ,Table,Button,Spin,Popconfirm,message,Pagination} from 'antd'
 import {PlusOutlined} from '@ant-design/icons'
 import style from './bookcheck.module.less'
 import booksapi from '@api/booksapi'
 class BookCheck extends Component{
   state = { 
+    page:1,
+    pageSize:5,
+    count:0,
     dataSource:[],
-    visible:false,
     spinning:false,
     columns:[
       {
@@ -58,6 +60,9 @@ class BookCheck extends Component{
               >
                 <Button type='danger' size='small'>删除</Button>
               </Popconfirm>
+              <Button type='primary' ghost onClick={()=>{
+                  this.props.history.replace('/admin/bookUpdate/'+record._id)
+                }}size='small'>编辑</Button>
             </div>
           )
         },
@@ -72,25 +77,19 @@ class BookCheck extends Component{
     if(result.code !==0){ return message.error(result.msg) }
     this.refreshList() 
   }
-  handleOk = async ()=>{
-    notification.success({description:'生死簿ok，模态框即将关闭',message:'成功',duration:0.3})
-    this.setState({visible:false})
-  }
-  handleCancel=()=>{
-    this.setState({visible:false})
-   }
    refreshList=async ()=>{
     this.setState({spinning:true})
-    let result = await booksapi.list()
+    let {page,pageSize}  = this.state
+    let result = await booksapi.list(page,pageSize)
     console.log(result,123)
-    this.setState({dataSource:result.list,spinning:false})
+    this.setState({dataSource:result.list,spinning:false,count:result.count})
    } 
    componentDidMount(){
     // 请求数据渲染界面
    this.refreshList()
   }
   render(){
-    let {dataSource,visible,spinning,columns} =this.state
+    let {dataSource,spinning,columns,page,pageSize,count} =this.state
     return (
       <div className={style.admins}>
          <Card title='生死簿'>
@@ -99,22 +98,23 @@ class BookCheck extends Component{
                 rowKey     设置为唯一索引字段
             */}
             <Button type="primary"onClick={()=>{
-              this.setState({visible:true})
+              this.props.history.replace('/admin/bookAdd')
             }}>{<PlusOutlined/>}添加人员</Button>
             <Spin spinning={spinning}>
-              <Table dataSource={dataSource} columns={columns} rowKey='_id'></Table>
+              <Table pagination={false} dataSource={dataSource} columns={columns} rowKey='_id'></Table>
             </Spin>
+           {/* 分页器 */}
+            <Pagination  current={page}total={count} showQuickJumper pageSize={pageSize}
+            onChange={(page,pageSize)=>{
+              //只要页码数发生改变就会触发          
+              this.setState({page},()=>{
+                this.refreshList()
+              })   
+            }}
+            />
          </Card>
          {/* 添加的模态框 */}
-         <Modal
-          title="添加人员"
-          visible={visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          userName:<input type="text" ref='us'/><br/>
-          passWord:<input type="text" ref='ps'/><br/>
-        </Modal>
+
       </div>
      );
   }

@@ -1,12 +1,16 @@
 import axios from '../utils/axios'
 class Logs {
+  findOne(id){
+    let url ='/mall/logs/'+id
+    return axios.get(url)
+  }
   list(){
     let url ='/mall/logs'
     return axios.get(url)
   }
-  add({name}){
+  add(payload){
     let url ='/mall/logs'
-    return axios.post(url,{name})
+    return axios.post(url,payload)
   }
   del(_id){
     let url ='/mall/logs'

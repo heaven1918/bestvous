@@ -137,7 +137,7 @@ class Bdata extends Component{
             </div>
             <div className={style.bottom}>
               <div className={style.desc}>
-                <img src="http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u299.png?token=51fd883f66cf547a7a0aea01554b0c9f23f5a39d6c64b852e1c9a7257ac97e66"/>
+                <img src="http://cloud.axureshop.com/gsc/1IZGNL/52/e4/77/52e4779c0d8d4a0c9ac6c2283464471d/images/地府大数据/u299.png?token=51fd883f66cf547a7a0aea01554b0c9f23f5a39d6c64b852e1c9a7257ac97e66" alt =""/>
                 <span>地府运营指标统计</span>
               </div>
               <div className={style.stat}>
