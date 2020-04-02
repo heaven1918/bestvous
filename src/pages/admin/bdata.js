@@ -95,7 +95,7 @@ class Bdata extends Component{
           <div className={style.right}>
             <div className={style.top}>
               <div className={style.desc}>
-                <img src="../../../public/u299.png"/>
+                <img src="../../../public/u299.png" alt=''/>
                 <span>地府工作人员业绩统计</span>
               </div>
               <div className={style.stat}>
@@ -128,7 +128,7 @@ class Bdata extends Component{
             </div>
             <div className={style.middle}>
               <div className={style.desc}>
-                <img src="../../../public/u299.png"/>
+                <img src="../../../public/u299.png" alt=''/>
                 <span>冥币汇率变化</span>
               </div>
               <div className={style.stat}>

@@ -7,11 +7,6 @@ class LunHui extends Component{
     dataSource:[],
     columns:[
       {
-        title: 'ID',   //显示
-        dataIndex: '_id',//数据索引字段
-        key: '_id', //key值
-      },
-      {
         title: '姓名',
         dataIndex: 'name',
         key: 'name',
@@ -40,6 +35,7 @@ class LunHui extends Component{
   }
   getList= async()=>{
     let result = await booksapi.ending()
+    console.log(result)
     this.setState({dataSource:result.result})
   }
   reborth= async()=>{

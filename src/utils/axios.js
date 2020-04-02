@@ -11,7 +11,7 @@ axios.interceptors.request.use(function (config) {
 });
 
 axios.interceptors.response.use(function (response) {
-  let {code,msg}= response.data
+  let {code}= response.data
   if(code === 402){
     //token失效
     let action = actionCreatore.changeTokenModal(true)

@@ -11,7 +11,7 @@ class Login extends Component {
       let data = values
       api.login(data).then((res)=>{
         console.log(res)
-        if(res.code == 404){
+        if(res.code === 404){
           message.error('用户名密码错误')
         }else{
           //登录成功获取token保存到localstorage
@@ -22,9 +22,6 @@ class Login extends Component {
         } 
       })
       // this.props.history.replace('/admin')
-    };
-    const onFinishFailed = errorInfo => {
-      console.log('Failed:', errorInfo);
     };
     return (
       <div className={style['box']}> 

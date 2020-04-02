@@ -12,11 +12,6 @@ class Admins extends Component {
     spinning:false,
     columns:[
       {
-        title: 'id',   //显示
-        dataIndex: '_id',//数据索引字段
-        key: '_id', //key值
-      },
-      {
         title: '账号',
         dataIndex: 'userName',
         key: 'userName',

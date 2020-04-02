@@ -12,11 +12,6 @@ class BookCheck extends Component{
     spinning:false,
     columns:[
       {
-        title: 'ID',   //显示
-        dataIndex: '_id',//数据索引字段
-        key: '_id', //key值
-      },
-      {
         title: '姓名',
         dataIndex: 'name',
         key: 'name',

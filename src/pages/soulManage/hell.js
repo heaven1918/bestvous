@@ -6,16 +6,11 @@ import style from './hell.module.less'
 class BookCheck extends Component{
   state = { 
     page:1,
-    pageSize:5,
+    pageSize:8,
     count:0,
     dataSource:[],
     spinning:false,
     columns:[
-      {
-        title: 'ID',   //显示
-        dataIndex: '_id',//数据索引字段
-        key: '_id', //key值
-      },
       {
         title: '姓名',
         dataIndex: 'name',
@@ -74,14 +69,16 @@ class BookCheck extends Component{
     console.log('删除',_id)
     let result =await hellsapi.del(_id)
     // 根据结果进行
-    if(result.code !==0){ return false }
+    if(result.code !==0){ 
+      message.warning('权限不足')
+      return false }
     this.refreshList() 
   } 
   refreshList=async ()=>{
     let {page,pageSize}  = this.state
     this.setState({spinning:true})
     let result = await hellsapi.list(page,pageSize)
-    console.log(result,123)
+    // console.log(result,123)
     this.setState({dataSource:result.list,spinning:false,count:result.count})
   } 
   componentDidMount(){
