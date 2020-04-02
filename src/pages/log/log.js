@@ -27,14 +27,14 @@ class Log extends Component {
       },
       {
         title:'操作',
-        key:'action',
+        key:'actions',
         // 定义渲染的列
         // 参数如果没写dataIndex 整条数据  写了dataIndex 那就是关联数据
         render:(record)=>{
           return(
             <div>
                <Popconfirm
-                title="你确定要删除这个人吗?"
+                title="你确定要删除这条记录吗?"
                 onConfirm={()=>{
                   this.del(record._id)
                 }}

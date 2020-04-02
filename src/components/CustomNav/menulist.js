@@ -64,19 +64,19 @@ export default[
         title:'审判记录',
         path:'/admin/judgeRecord'
       },
-      {
-        key:'4-3',
-        title:'沉冤昭雪',
-        path:'/admin/judgeReload'
-      }
+      // {
+      //   key:'4-3',
+      //   title:'沉冤昭雪',
+      //   path:'/admin/judgeReload'
+      // }
     ]
   },
-  {
-    key:'5',
-    title:"冥币管理",
-    icon:'money',
-    path:'/admin/money'
-  },
+  // {
+  //   key:'5',
+  //   title:"冥币管理",
+  //   icon:'money',
+  //   path:'/admin/money'
+  // },
   {
     key:'6',
     title:"日志管理",

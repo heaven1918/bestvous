@@ -1,7 +1,6 @@
 import React,{Component,Fragment} from 'react'
 import {Table,Button,Popconfirm,message} from 'antd'
 import booksapi from '@api/booksapi'
-// import style from './lunhui.module.less'
 class LunHui extends Component{
   state = {
     dataSource:[],

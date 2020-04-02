@@ -16,6 +16,7 @@ class Login extends Component {
         }else{
           //登录成功获取token保存到localstorage
           localStorage.setItem('token',res.token)
+          localStorage.setItem('userName',data.userName)
           message.success('登录成功，0.5s后跳转首页',0.2,()=>{
             this.props.history.replace('/admin')
           })
@@ -81,7 +82,7 @@ class Login extends Component {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <span >register now!</span>
+        Or <span >注册!</span>
       </Form.Item>
     </Form>
     </div>
