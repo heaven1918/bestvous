@@ -38,14 +38,16 @@ class Bdata extends Component{
               <h6>地府人数</h6>
               <h1>999999</h1>
             </div>
-            <Collapse accordion className={style.middle}>
-              <Panel showArrow={false} header="铁磨地狱" key="1" className={style.text}>
-                <p>
-                  <h6>本层人数</h6>
-                  <h6>痛苦值</h6>
-                  <h6>物资补给</h6>
-                </p>
-              </Panel>
+            <Collapse accordion className={style.middle} id={style.other}>
+              <span className={style.topear}></span>
+              <div className={style.other} width='80' height='50'>你好啊</div>
+              <div className={style.currentDom} width='80' height='200'>你好啊</div>
+              <div className={style.other} width='80' height='50'>你好啊</div>
+              <div className={style.other} width='80' height='50'>你好啊</div>
+              <div className={style.other} width='80' height='50'>你好啊</div>
+              <span className={style.botear}></span>
+              {/* color: rgba(0, 255, 204, 0.82); */}
+              {/* 
               <Panel showArrow={false} header="孤独地狱" key="2">
                 <p>
                   <h6>本层人数</h6>
@@ -73,7 +75,7 @@ class Bdata extends Component{
                   <h6>痛苦值</h6>
                   <h6>物资补给</h6>
                 </p>
-              </Panel>
+              </Panel> */}
             </Collapse>
             <div className={style.foot}>
               <p>地狱受刑人员性别</p>
